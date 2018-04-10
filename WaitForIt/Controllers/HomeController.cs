@@ -20,8 +20,7 @@ namespace WaitForIt.Controllers
 
         public IActionResult Error()
         {
-            //todo: handle error view
-            return Index();
+            return View();
         }
     }
 }

@@ -18,34 +18,36 @@
     </environment>
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            TEST
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="message">
+            <img class="image" src="https://media2.giphy.com/media/d1GpZTVp2eV7gQk8/giphy.gif"/>
+                <p>Do szczególnego dnia pozostało dni <span>234</span></p>
+            </div>
         </div>
     </div>
-    <div class="container">
-        TRESC
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - <a href="mailto:piotr.jaminski@gmail.com">Piotr Jamiński</a></p>
-        </footer>
-    </div>
+</div>            
 
-    <environment names="Development">
-        <script src="~/lib/jquery/dist/jquery.js"></script>
-        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
-        <script src="~/js/site.js" asp-append-version="true"></script>
-    </environment>
-    <environment names="Staging,Production">
-        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"
-                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
-                asp-fallback-test="window.jQuery">
-        </script>
-        <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/bootstrap.min.js"
-                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
-                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal">
-        </script>
-        <script src="~/js/site.min.js" asp-append-version="true"></script>
-    </environment>
+<footer>
+    <p>&copy; @DateTime.Now.Year - <a href="mailto:piotr.jaminski@gmail.com">Piotr Jamiński</a></p>
+</footer>
+
+<environment names="Development">
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+</environment>
+<environment names="Staging,Production">
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"
+            asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+            asp-fallback-test="window.jQuery">
+    </script>
+    <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/bootstrap.min.js"
+            asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
+            asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal">
+    </script>
+    <script src="~/js/site.min.js" asp-append-version="true"></script>
+</environment>
 </body>
 </html>

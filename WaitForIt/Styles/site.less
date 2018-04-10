@@ -1,6 +1,53 @@
-﻿@primary-color: white;
+﻿@primary-color: #104BA9;
+@secondary-color: #5A73D5;
+
+html {
+    height: 100%;
+}
 
 body {
-    background-color: @primary-color;
-    padding: 20px;
+    background-color: @secondary-color;
+    background-image: url('../images/hearts.jpg');
+    background-repeat: repeat;
+    padding-top: 50px;
+    padding-bottom: 20px;
+    height: 100%;
+    text-align: center;
 }
+
+footer {
+    position: fixed;
+    height: 45px;
+    bottom: 0;
+    width: 100%;
+    color: @primary-color;
+    font-weight: 600;
+    a, a:hover {
+        color: @primary-color;
+    }
+}
+
+.message {
+    border: 5px ridge @secondary-color;
+    color: @primary-color;
+    background: white;
+    padding: 1.5rem;
+
+    @media only screen and (max-width: 760px) {
+        max-height: 100%;
+        width: auto;
+    }
+
+    .image {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+.container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
