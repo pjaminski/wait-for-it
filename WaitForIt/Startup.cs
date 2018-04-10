@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using WaitForIt.Services;
 
 namespace WaitForIt
 {
@@ -18,6 +19,8 @@ namespace WaitForIt
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            services.Configure<FinalDateSettings>(Configuration.GetSection("FinalDateSettings"));
+            services.AddScoped<IDateCounterService, DateCounterService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

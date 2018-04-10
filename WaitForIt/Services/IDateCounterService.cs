@@ -1,7 +1,9 @@
-﻿namespace WaitForIt.Services
+﻿using WaitForIt.Models;
+
+namespace WaitForIt.Services
 {
     public interface IDateCounterService
     {
-        string GetCurrentMessage();
+        CurrentMessageViewModel GetCurrentMessage();
     }
 }
