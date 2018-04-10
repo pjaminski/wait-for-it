@@ -16,12 +16,11 @@ body {
 }
 
 footer {
-    position: fixed;
-    height: 45px;
-    bottom: 0;
-    width: 100%;
+    padding-top: 10px;
+    clear: left;
     color: @primary-color;
     font-weight: 600;
+
     a, a:hover {
         color: @primary-color;
     }
@@ -31,23 +30,24 @@ footer {
     border: 5px ridge @secondary-color;
     color: @primary-color;
     background: white;
-    padding: 1.5rem;
-
-    @media only screen and (max-width: 760px) {
-        max-height: 100%;
-        width: auto;
-    }
 
     .image {
-        max-width: 100%;
-        height: auto;
+        height: 300px;
+        width: 300px;
     }
 }
 
 .container {
     height: 100%;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    float: left;
+}
+
+.days {
+    font-size: 2em;
+    color: red;
 }
 

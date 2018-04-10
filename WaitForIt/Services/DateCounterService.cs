@@ -15,25 +15,29 @@ namespace WaitForIt.Services
 
         public CurrentMessageViewModel GetCurrentMessage()
         {
-            var crrentMessageViewModel = new CurrentMessageViewModel
+            var currentMessageViewModel = new CurrentMessageViewModel
             {
                 RemainingDays = GetRemainingDays()
             };
         
-            if (crrentMessageViewModel.RemainingDays > 0)
+            if (currentMessageViewModel.RemainingDays > 0)
             {
-
+                currentMessageViewModel.CurrentMessage = "Do szczególnego dnia pozostało dni: ";
+                currentMessageViewModel.ImageUrl = "..\\images\\calendar.gif";
             }
-            else if (crrentMessageViewModel.RemainingDays < 0)
+            else if (currentMessageViewModel.RemainingDays < 0)
             {
-
+                currentMessageViewModel.CurrentMessage = "Od szczególnego dnia minęło dni: ";
+                currentMessageViewModel.ImageUrl = "..\\images\\after.gif";
+                currentMessageViewModel.RemainingDays = currentMessageViewModel.RemainingDays * -1;
             }
             else
             {
-
+                currentMessageViewModel.CurrentMessage = "Ten dzień to dziś!";
+                currentMessageViewModel.ImageUrl = "..\\images\\after.gif";
             }
 
-            return crrentMessageViewModel;
+            return currentMessageViewModel;
         }
 
         private int GetRemainingDays()

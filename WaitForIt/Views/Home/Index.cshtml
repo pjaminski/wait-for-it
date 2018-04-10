@@ -22,8 +22,13 @@
     <div class="row">
         <div class="col-md-12">
             <div class="message">
-            <img class="image" src="https://media2.giphy.com/media/d1GpZTVp2eV7gQk8/giphy.gif"/>
-                <p>Do szczególnego dnia pozostało dni <span>234</span></p>
+                <img class="image" src="@Model.ImageUrl" />
+                <p>@Model.CurrentMessage 
+                @if (Model.RemainingDays != 0)
+                {
+                    <span class="days">@Model.RemainingDays</span>
+                }
+                </p>
             </div>
         </div>
     </div>
