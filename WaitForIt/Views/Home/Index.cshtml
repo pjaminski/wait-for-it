@@ -19,15 +19,24 @@
 </head>
 <body>
 <div class="container">
+    <div class="row language-box">
+        <div class="col-md-12">
+            <ul class="language">
+                <li><a href="?culture=pl-PL">PL</a></li> 
+                <li>|</li>
+                <li><a href="?culture=en-GB">EN</a></li>
+            </ul>
+            </div>
+        </div>
     <div class="row">
         <div class="col-md-12">
             <div class="message">
-                <img class="image" src="@Model.ImageUrl" />
-                <p>@Model.CurrentMessage 
-                @if (Model.RemainingDays != 0)
-                {
-                    <span class="days">@Model.RemainingDays</span>
-                }
+                <img class="image" src="@Model.ImageUrl"/>
+                <p>@Model.CurrentMessage
+                    @if (Model.RemainingDays != 0)
+                    {
+                        <span class="days">@Model.RemainingDays</span>
+                    }
                 </p>
             </div>
         </div>
