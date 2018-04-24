@@ -23,7 +23,7 @@ namespace WaitForIt.Services
             {
                 RemainingDays = GetRemainingDays(),
                 AdditionalMessage = _customSettings.AdditionalMessage,
-                FinalDate = _customSettings.FinalDate.ToString("d")
+                FinalDate = _customSettings.FinalDate.ToString("dd.MM.yyyy")
             };
         
             if (currentMessageViewModel.RemainingDays > 0)
