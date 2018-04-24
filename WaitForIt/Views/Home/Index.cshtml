@@ -31,6 +31,8 @@
     <div class="row">
         <div class="col-md-12">
             <div class="message">
+                <span class="additionalMessage">@Model.AdditionalMessage</span>
+                <span class="finalDate">@Model.FinalDate</span>
                 <img class="image" src="@Model.ImageUrl"/>
                 <p>@Model.CurrentMessage
                     @if (Model.RemainingDays != 0)

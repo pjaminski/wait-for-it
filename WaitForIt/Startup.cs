@@ -32,7 +32,7 @@ namespace WaitForIt
         {
             services.AddLocalization(options => options.ResourcesPath = "Resources");
             services.AddMvc();
-            services.Configure<FinalDateSettings>(Configuration.GetSection("FinalDateSettings"));
+            services.Configure<CustomSettings>(Configuration.GetSection("CustomSettings"));
             services.AddScoped<IDateCounterService, DateCounterService>();          
         }
 

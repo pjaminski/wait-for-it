@@ -1,1 +1,73 @@
-html{height:100%}body{background-color:#5a73d5;background-image:url(../images/hearts.jpg);background-repeat:repeat;padding-top:50px;padding-bottom:45px;height:100%;text-align:center}footer{padding-top:5px;clear:left;color:#104ba9;font-weight:600}footer a,footer a:hover{color:#104ba9}.message{border:5px ridge #5a73d5;color:#104ba9;background:#fff}.message .image{height:300px;width:300px}.container{height:100%;width:100%;display:flex;justify-content:center;align-items:center;float:left}.days{font-size:2em;color:red}.language-box{position:fixed;top:0;right:0}.language{list-style:none;padding:0;border:5px ridge #5a73d5;color:#104ba9;background:#fff}.language .image{height:300px;width:300px}.language li{padding:5px;display:inline}
+html {
+  height: 100%;
+}
+body {
+  background-color: #5A73D5;
+  background-image: url('../images/hearts.jpg');
+  background-repeat: repeat;
+  padding-top: 50px;
+  padding-bottom: 45px;
+  height: 100%;
+  text-align: center;
+}
+footer {
+  padding-top: 5px;
+  clear: left;
+  color: #104BA9;
+  font-weight: 600;
+}
+footer a,
+footer a:hover {
+  color: #104BA9;
+}
+.message {
+  border: 5px ridge #5A73D5;
+  color: #104BA9;
+  background: white;
+}
+.message .image {
+  height: 300px;
+  width: 300px;
+}
+.container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  float: left;
+}
+.days {
+  font-size: 2em;
+  color: red;
+  display: block;
+}
+.language-box {
+  position: fixed;
+  top: 0;
+  right: 0;
+}
+.language {
+  list-style: none;
+  padding: 0;
+  border: 5px ridge #5A73D5;
+  color: #104BA9;
+  background: white;
+}
+.language .image {
+  height: 300px;
+  width: 300px;
+}
+.language li {
+  padding: 5px;
+  display: inline;
+}
+.additionalMessage {
+  display: block;
+  font-size: 2em;
+  font-weight: 700;
+}
+.finalDate {
+  display: block;
+  font-size: 1.2em;
+}

@@ -7,12 +7,12 @@ namespace WaitForIt.Services
 {
     public class DateCounterService : IDateCounterService
     {
-        private readonly FinalDateSettings _finalDateSettings;
+        private readonly CustomSettings _customSettings;
         private readonly IStringLocalizer _localizer;
 
-        public DateCounterService(IOptions<FinalDateSettings> finalDateSettings, IStringLocalizerFactory stringLocalizerFactory)
+        public DateCounterService(IOptions<CustomSettings> finalDateSettings, IStringLocalizerFactory stringLocalizerFactory)
         {
-            _finalDateSettings = finalDateSettings.Value;
+            _customSettings = finalDateSettings.Value;
             _localizer = stringLocalizerFactory.Create("Messages",
                 System.Reflection.Assembly.GetExecutingAssembly().GetName().Name);
         }
@@ -21,24 +21,26 @@ namespace WaitForIt.Services
         {
             var currentMessageViewModel = new CurrentMessageViewModel
             {
-                RemainingDays = GetRemainingDays()
+                RemainingDays = GetRemainingDays(),
+                AdditionalMessage = _customSettings.AdditionalMessage,
+                FinalDate = _customSettings.FinalDate.ToString("d")
             };
         
             if (currentMessageViewModel.RemainingDays > 0)
             {
                 currentMessageViewModel.CurrentMessage = $"{_localizer["BeforeDateMessage"]}:";
-                currentMessageViewModel.ImageUrl = "..\\images\\calendar.gif";
+                currentMessageViewModel.ImageUrl = _customSettings.BeforeDateImg;
             }
             else if (currentMessageViewModel.RemainingDays < 0)
             {
                 currentMessageViewModel.CurrentMessage = $"{_localizer["AfterDateMessage"]}:";
-                currentMessageViewModel.ImageUrl = "..\\images\\after.gif";
+                currentMessageViewModel.ImageUrl = _customSettings.AfterDateImg;
                 currentMessageViewModel.RemainingDays = currentMessageViewModel.RemainingDays * -1;
             }
             else
             {
                 currentMessageViewModel.CurrentMessage = _localizer["ThisDateMessage"];
-                currentMessageViewModel.ImageUrl = "..\\images\\heart.gif";
+                currentMessageViewModel.ImageUrl = _customSettings.ThisDateImg;
             }
 
             return currentMessageViewModel;
@@ -46,7 +48,7 @@ namespace WaitForIt.Services
 
         private int GetRemainingDays()
         {
-            return (_finalDateSettings.FinalDate - DateTime.Today).Days;
+            return (_customSettings.FinalDate - DateTime.Today).Days;
         }
     }
 }
